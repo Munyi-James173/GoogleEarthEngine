@@ -20,6 +20,8 @@ var roi = ee.Geometry.Polygon(cor)
 
 Map.centerObject(roi);
 
+var image = ee.Image("USGS/SRTMGL1_003")
+
 var srtm = image.select('elevation');
 
 Map.addLayer(srtm.clip(roi),[],'dem30',false)
